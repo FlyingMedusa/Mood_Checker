@@ -9,6 +9,21 @@ const pGoodCounter = document.querySelector('.good-count');
 const pBadCounter = document.querySelector('.bad-count');
 const pLastVisit = document.querySelector('.last-visit');
 
+
+// Dark mode
+btnDarkMode.addEventListener('click', () => {
+    const isDarkMode = body.classList.toggle('dark-mode');
+    mainDiv.classList.toggle('dark-mode-div');
+    btnDarkMode.classList.toggle('btn-dark');
+    btnDarkMode.classList.toggle('btn-light');
+
+    if (isDarkMode) {
+        btnDarkMode.innerText = "☉ LIGHT MODE";
+    } else {
+        btnDarkMode.innerText = "☽ DARK MODE";
+    }
+});
+
 // "Good - Bad" counters
 let goodCounter = Number(localStorage.getItem('good-counter'));
 let badCounter = Number(localStorage.getItem('bad-counter'));
